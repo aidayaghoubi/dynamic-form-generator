@@ -4,6 +4,8 @@ const INITIAL_STATE = {
     inputs:[],
     forms:[]
 }
+let id = 0;
+    
 
 const reducer = (state = INITIAL_STATE , action) => {
 
@@ -12,42 +14,42 @@ const reducer = (state = INITIAL_STATE , action) => {
         case actionTypes.ADD_INPUT: {
             return {
                 ...state,
-                inputs:[...state.inputs , {type:"input" }]
+                inputs:[...state.inputs , {type:"input" , index:id++ }]
             }
 
         }
         case actionTypes.Add_CHECKBOX: {
             return {
                 ...state,
-                inputs:[...state.inputs , {type:"checkBox" , payload:action.payload }]
+                inputs:[...state.inputs , {type:"checkBox" , payload:action.payload , index:id++}]
             }
 
         }
         case actionTypes.ADD_NUMBER: {
             return {
                 ...state,
-                inputs:[...state.inputs , {type:"number" }]
+                inputs:[...state.inputs , {type:"number", index:id++ }]
             }
 
         }
         case actionTypes.ADD_RADIO: {
             return {
                 ...state,
-                inputs:[...state.inputs , {type:"radio" , payload:action.payload }]
+                inputs:[...state.inputs , {type:"radio" , payload:action.payload, index:id++}]
             }
 
         }
         case actionTypes.Add_SELECT: {
             return {
                 ...state,
-                inputs:[...state.inputs , {type:"select" , payload:action.payload }]
+                inputs:[...state.inputs , {type:"select" , payload:action.payload, index:id++}]
             }
 
         }
         case actionTypes.Add_LABEL: {
             return {
                 ...state,
-                inputs:[...state.inputs , {type:"label" ,payload:action.payload  }]
+                inputs:[...state.inputs , {type:"label" ,payload:action.payload , index:id++ }]
             }
 
         }

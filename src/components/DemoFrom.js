@@ -11,7 +11,20 @@ import SubmitForm from "../utils/SubmitForm";
 const DemoFrom = () => {
 
   const store = useSelector((state) => state);
- 
+  var arr = [];
+  arr[0] = "Jani";
+  arr[1] = "Hege";
+  arr[2] = "Stale";
+  arr[3] = "Kai Jim";
+  arr[4] = "Borge";
+
+  
+  arr.splice(2, 0, {id:"aida"});
+  arr.splice(1, 0, {id:"فغاغف"});
+  arr.splice(9, 0, {id:"معه"});
+  console.log(store);
+
+  
   return (<>
     <Box
       component="form"
@@ -25,16 +38,16 @@ const DemoFrom = () => {
       autoComplete="off"
     >
       {store?.inputs?.map((el, i) => (
-        <InputCreator key={i} inputType={el.type} payload={el.payload} />
+        <InputCreator key={i} index={el.index} inputType={el.type} payload={el.payload} />
       ))}
-     
-      
+
+
     </Box>
     {
-       (store.inputs.length !== 0) &&  <SubmitForm/>
-      }
-    {!(store.inputs.length)  && <EmptyForm />}
-    </>
+      (store.inputs.length !== 0) && <SubmitForm />
+    }
+    {!(store.inputs.length) && <EmptyForm />}
+  </>
   );
 };
 

@@ -16,13 +16,12 @@ margin:10px 0;
 }
 `
 
-const TextInput = ({type , label}) => {
+const TextInput = ({type , index , label}) => {
 
-
-
+    
     return <Wrapper>
         <p>{label}</p>
-        <Add type={type} />
+        <Add type={type} index={index} />
     </Wrapper>
     
 }

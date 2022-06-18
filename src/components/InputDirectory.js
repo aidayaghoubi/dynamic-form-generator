@@ -32,7 +32,7 @@ const InputDirectory = () =>{
 
     return <div>
         {
-            INPUTS.map((el,i) =>   <TextInput type={el.name} label={el.label} key={i}/>)
+            INPUTS.map((el,i) =>   <TextInput type={el.name} index={el.index} label={el.label} key={i}/>)
         }
     </div>
 }
