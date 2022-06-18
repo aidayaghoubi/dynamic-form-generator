@@ -1,6 +1,7 @@
 import { TextField } from "@mui/material";
 import styled from "@emotion/styled";
 import { Button } from "@mui/material";
+import AddWithCustomIndex from "../utils/AddWithCustomIndex";
 
 const InputWrapper = styled.div`
   display: flex;
@@ -16,10 +17,10 @@ const OptionWrapper = styled.div`
 
 `
 
-const InputCreator = ({ payload, inputType }) => {
+const InputCreator = ({ payload, inputType , index }) => {
   return (
     <InputWrapper>
-      <Button>+</Button>
+      <AddWithCustomIndex index={index}  />
       <div>{payload !== undefined && payload.title ? payload.title : inputType}</div>
       {payload !== undefined && (
         <OptionWrapper>
@@ -28,7 +29,7 @@ const InputCreator = ({ payload, inputType }) => {
           })}
         </OptionWrapper>
       )}
-      <Button>+</Button>
+      <AddWithCustomIndex />
     </InputWrapper>
   );
 };
